@@ -43,7 +43,7 @@ public with sharing class FlowControlLoopsCollections {
      * @return true if the person is eligible to vote, false otherwise.
      */
     public static Boolean votingEligibility(Integer age) {
-        return age >= 18 ? true : false; // Replace null with the variable you used to store the result
+        return age >= 18; // Replace null with the variable you used to store the result
     }
 
     /**
@@ -83,8 +83,9 @@ public with sharing class FlowControlLoopsCollections {
         }
         if (a < 0){
             return 'Negative';
-        } else
-        return 'Zero'; // Replace null with the variable you used to store the result
+        } else {
+        return 'Zero'; 
+        } 
     }
 
     /**
@@ -256,11 +257,11 @@ public with sharing class FlowControlLoopsCollections {
     public static Integer sumPositiveIntegers() {
         List<Integer> numbers = new List<Integer>{-1, 2, -3, 4, -5, 6}; //DO NOT CHANGE
         Integer sumOfNumbers = 0;
-        for(Integer i = 0; i < numbers.size(); i++){
-            if(numbers[i] > 0){
-                sumOfNumbers += numbers[i];
+        for(Integer num : numbers) {
+            if(num > 0) {
+                sumOfNumbers += num;
+            }
         }
-    }
         return sumOfNumbers;
 }
     /**
@@ -273,11 +274,13 @@ public with sharing class FlowControlLoopsCollections {
      */
     public static Integer findWordInList(String wordToFind, List<String> words) {
         Integer wordIndex = -1;
-        for(Integer i = 0; i < words.size(); i++){
-            if(words[i] == wordToFind){
+        Integer i = 0;
+        for(String  word : words){
+            if(word.equals(wordToFind)) {
                 wordIndex = i;
                 break;
             } 
+            i++;
         }
         return wordIndex;
     }
@@ -308,13 +311,12 @@ public with sharing class FlowControlLoopsCollections {
      * @return The Map of fruits and their quantities.
      */
     public static Map<String, Integer> addItemsToMap() {
-        Map<String, Integer> itemsToMap = new Map<String, Integer>(); {
+        Map<String, Integer> itemsToMap = new Map<String, Integer>(); 
             itemsToMap.put('Apples', 5);
             itemsToMap.put('Oranges', 10);
             itemsToMap.put('Bananas', 15);
             itemsToMap.put('Pears', 20);
             itemsToMap.put('Grapes', 25);
-        }
         return itemsToMap; // Replace null with the variable you used to store the result
     }
 
